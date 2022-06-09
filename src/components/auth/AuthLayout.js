@@ -6,15 +6,13 @@ import { darkModeVar, disableDarkMode, enableDarkMode } from "../../apollo";
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
-
-const Wrapper = styled.div`
-  max-width: 350px;
   width: 100%;
+  height: 100vh;
+  background-image: url("https://pbs.twimg.com/media/EOhUsy5VAAImfd1?format=jpg&name=large");
+  background-size: cover;
 `;
 
 const Footer = styled.footer`
@@ -29,7 +27,7 @@ function AuthLayout({ children }) {
   const darkMode = useReactiveVar(darkModeVar);
   return (
     <Container>
-      <Wrapper>{children}</Wrapper>
+      <div>{children}</div>
       <Footer>
         <DarkModeBtn onClick={darkMode ? disableDarkMode : enableDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
